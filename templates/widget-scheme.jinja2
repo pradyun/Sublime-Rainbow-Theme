@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>author</key>
+    <string>Pradyun Gedam</string>
+    <key>comment</key>
+    <string>A widget theme for the UI components of the {{ name }} theme.</string>
+    <key>name</key>
+    <string>{{ name }} - Widget Theme</string>
+    <key>settings</key>
+    <array>
+        <dict>
+            <key>settings</key>
+            <dict>
+                <key>background</key>
+                <string>{{ theme.background.hex }}</string>
+                <key>caret</key>
+                <string>{{ theme.foreground.darken(10).hex }}</string>
+                <key>foreground</key>
+                <string>{{ theme.foreground.hex }}</string>
+                <key>selection</key>
+                <string>{{ theme.foreground.mix_with(theme.background).with_opacity(128).hex }}</string>
+                <key>selectionBorder</key>
+                <string>{{ theme.foreground.mix_with(theme.background).hex }}</string>
+                <key>inactiveSelection</key>
+                <string>{{ theme.foreground.mix_with(theme.background, -0.25).with_opacity(128).hex }}</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Comment</string>
+            <key>scope</key>
+            <string>comment</string>
+            <key>settings</key>
+            <dict>
+                <key>fontStyle</key>
+                <string>italic</string>
+                <key>foreground</key>
+                <string>{{ theme.foreground.mix_with(theme.background).hex }}</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>Keyword</string>
+            <key>scope</key>
+            <string>keyword, storage</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>{{ theme.foreground.lighten(30).saturate(50).adjust_hue(60).hex }}</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>scope</key>
+            <string>constant</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>{{ theme.foreground.lighten(30).saturate(50).adjust_hue(240).hex }}</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>scope</key>
+            <string>string</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>{{ theme.foreground.lighten(30).saturate(50).adjust_hue(120).hex }}</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>scope</key>
+            <string>constant.character.escape</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>{{ theme.foreground.lighten(30).saturate(50).adjust_hue(180).hex }}</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

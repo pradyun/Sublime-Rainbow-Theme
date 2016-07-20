@@ -1,0 +1,14 @@
+[
+    {
+        "caption": "Rainbow: Adapt Current Theme",
+        "command": "rainbow_adapt_theme"
+    },
+    {
+        "caption": "Rainbow: Clear Cache",
+        "command": "rainbow_clear_cache"
+    },
+    {
+        "caption": "Rainbow: Reload Package",
+        "command": "rainbow_reload_package"
+    }
+]
