@@ -7,13 +7,18 @@ All the temporary stuff should be put Packages/User. That is the theme-cache.
 Base directory: Packages/Theme - Rainbow/
 
 Directory             | Type of Files
-----------------------|---------------------------------------------------------------------
+----------------------|------------------------------------------------------------------
 `/`                   | Basic stuff
-`/metadata`           | Generated Sidebar Icon metadata for the themes
+`/assets`             | Assets for the themes
+`/settings`           | Widget Settings Files
+`/widget-scheme`      | Widget Scheme Files
 `/themes`             | Generated themes
+`/rainbow_lib`        | The magical entity that creates magic.
 `/themes/icons`       | Sidebar icons for the themes
-`/themes/images`      | Assets for the themes
-`/themes/settings`    | Widget Settings Files
+`/metadata`           | Generated Sidebar Icon metadata for the themes
+
+
+> Beyond this, it's out of date.
 
 ## Flow of Package and Regeneration
 > Task (`Where is it handled?`)
