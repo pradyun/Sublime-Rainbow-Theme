@@ -7,8 +7,8 @@ import sublime
 
 # -----------------------------------------------------------------------------
 
-DEBUG_MODE = True
-DEVELOP_MODE = True
+DEBUG_MODE = False
+DEVELOP_MODE = False
 PACKAGE_NAME = "Theme - Rainbow"
 
 # Path
