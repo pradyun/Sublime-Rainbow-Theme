@@ -329,7 +329,7 @@ class Colour(object):
         return self._opacity
 
     def __str__(self):
-        return str(list(self.rgb))
+        return str(list(round(i, 2) for i in self.rgb))
 
     def __repr__(self):
         return "Colour({})".format(", ".join(

@@ -29,10 +29,14 @@ class RainbowThemeAdapter(object):
             return False
 
         # Generate other colours for the theme from what we know
-        context = self.ctx_man.generate_theme_context(scheme_colours, variant, theme_name)  # noqa
+        context = self.ctx_man.generate_theme_context(
+            scheme_colours, variant, theme_name
+        )
 
         # Generate the theme and supporting files
-        rendered = self.th_man.get_rendered_theme_parts(context, scheme_colours, variant)
+        rendered = self.th_man.get_rendered_theme_parts(
+            context, scheme_colours, variant
+        )
 
         # Write the generated theme in the Package
         self.th_man.write_theme_parts(context, rendered)
