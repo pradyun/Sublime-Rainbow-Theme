@@ -2,6 +2,7 @@
 """
 
 from . import core
+from .cache import NullCache, FileSystemCache
 from .theme_manager import ThemeManager
 from .context_manager import ContextManager
 from .preferences_manager import PreferencesManager
@@ -21,6 +22,14 @@ class RainbowThemeAdapter(object):
 
         # Reload the preferences
         self.prefs.load_settings()
+
+        # Prepare everything according to settings.
+        core.setup_logger(self.prefs)
+
+        if self.prefs.develop_mode:
+            self.th_man.set_cache(NullCache())
+        else:
+            self.th_man.set_cache(FileSystemCache())
 
         # To decide if generation can be skipped.
         skip_reason = None

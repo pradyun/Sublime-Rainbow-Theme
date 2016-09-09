@@ -4,21 +4,20 @@
 import os
 
 from . import core
-from .cache import NullCache, FileSystemCache
 from .compiler import Compiler
 
 
 class ThemeManager(object):
 
-    def __init__(self):
+    def __init__(self, cache=None):
         super().__init__()
+        self.cache = None
 
-        if core.utils.DEVELOP_MODE:
-            self.cache = NullCache()
-        else:
-            self.cache = FileSystemCache()
         self.compiler = Compiler()
         self._fsi = core.FileSystemInterfacer()
+
+    def set_cache(self, cache):
+        self.cache = cache
 
     def _get_helper_functions(self, variant):
         def lighten(colour, amount):
@@ -40,6 +39,12 @@ class ThemeManager(object):
     def get_rendered_theme_parts(self, context, scheme_colours, variant):
         """Returns a rendered theme with given context and colours
         """
+
+        if self.cache is None:
+            raise RuntimeError(
+                "There has been an emergency. There is no cache prepared. "
+                "Go die."
+            )
         retval = {
             "theme": None,
             "widget-scheme": None,

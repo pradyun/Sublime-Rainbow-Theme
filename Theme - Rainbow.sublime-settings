@@ -1,0 +1,18 @@
+{
+    // If true, the theme will be adapted from the currently active view's
+    // colour scheme instead of the globally set scheme. There may be a short
+    // lag in the change of theme when switching between tabs with different
+    // colour schemes.
+    //
+    // NOTE: The theme variant (light/dark) does not change when tabs are
+    //       switched. Let me know over at the github repo if you want this
+    //       to be a toggle-able thing.
+    "load_colors_from_active_view": true,
+
+    // If true, debugging information is printed to console.
+    "debug_mode": false,
+
+    // If true, causes regeneration of theme every time the adapter is run
+    // regardless of what is there cached.
+    "develop_mode": false
+}

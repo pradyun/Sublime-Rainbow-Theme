@@ -25,8 +25,14 @@ class PreferencesManager(object):
 
         self.load_settings()
 
+        self.debug_mode = self._s_pkg.get("debug_mode", False)
+        self.develop_mode = self._s_pkg.get("develop_mode", False)
+
     def load_settings(self):
         # Load the settings files
+        self._s_pkg = sublime.load_settings(
+            "Theme - Rainbow.sublime-settings"
+        )
         self._s_prefs = sublime.load_settings(
             "Preferences.sublime-settings"
         )
@@ -70,11 +76,14 @@ class PreferencesManager(object):
         return final
 
     def _get_colour_scheme(self):
-        load_from_view = False
-        if load_from_view:
+        if self._s_pkg.get("load_colors_from_active_view", True):
+            loading_from = "active view"
             settings = sublime.active_window().active_view().settings()
         else:
-            settings = sublime.load_settings("Preferences.sublime-settings")
+            loading_from = "global preferences"
+            settings = self._s_prefs
+
+        core.logger.debug("[prefs] Loading colours from %s", loading_from)
         return settings.get("color_scheme", None)
 
     # TODO: Make sure this works exactly like Sublime Text applies the general

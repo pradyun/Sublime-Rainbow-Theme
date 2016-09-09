@@ -1,0 +1,34 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Theme - Rainbow",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/Theme - Rainbow/Theme - Rainbow.sublime-settings"},
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {"file": "${packages}/User/Theme - Rainbow.sublime-settings"},
+                                "caption": "Settings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -3,7 +3,7 @@
 
 import logging
 
-from .utils import PACKAGE_NAME, DEBUG_MODE
+from .utils import PACKAGE_NAME
 
 __all__ = ["logger"]
 
@@ -12,5 +12,9 @@ __all__ = ["logger"]
 # -----------------------------------------------------------------------------
 logger = logging.getLogger(PACKAGE_NAME)
 
-if DEBUG_MODE:
-    logger.setLevel(logging.DEBUG)
+
+def setup_logger(preferences):
+    if preferences.debug_mode:
+        logger.setLevel(logging.DEBUG)
+    else:
+        logger.setLevel(logging.INFO)
