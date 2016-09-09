@@ -82,10 +82,9 @@ class PreferencesManager(object):
             settings = sublime.load_settings("Preferences.sublime-settings")
         return settings.get("color_scheme", None)
 
-    # TODO: Make sure this works exactly like Sublime Text applies the general scope.
+    # TODO: Make sure this works exactly like Sublime Text applies the general
+    #       scope.
     def _find_general_settings(self, plist_obj):
-        core.logger.debug("Extracting colours from Colour Scheme")
-
         retval = {}
         for item in plist_obj.get("settings", []):
             if 'scope' not in item and "settings" in item:
