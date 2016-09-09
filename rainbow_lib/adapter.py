@@ -18,14 +18,20 @@ class RainbowThemeAdapter(object):
         self.prefs = PreferencesManager()
 
     def run(self):
+
+        # To decide if generation can be skipped.
+        skip_reason = None
+
         # Extract colours from the colour schemes
         scheme_colours = self.prefs.get_current_scheme_colours()
 
         # Detect what the type of theme is active
         variant, theme_name = self.prefs.get_theme_variant_and_name()
-
         if variant is None:
-            core.logger.debug("Skipping generation due to inactive theme")
+            skip_reason = "Inactive theme"
+
+        if skip_reason is not None:
+            core.logger.debug("[adapter] Skipping generation - " + skip_reason)
             return False
 
         # Generate other colours for the theme from what we know
