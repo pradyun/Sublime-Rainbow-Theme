@@ -25,14 +25,6 @@ class PreferencesManager(object):
 
         self.load_settings()
 
-    def get_active_theme_details(self):
-        settings = sublime.load_settings("Preferences.sublime-settings")
-
-        colour = settings.get("rainbow_colour", "#FFFFFF")
-        theme = settings.get("rainbow_theme", self.ext)
-
-        return theme, colour
-
     def load_settings(self):
         # Load the settings files
         self._s_prefs = sublime.load_settings(
@@ -49,13 +41,7 @@ class PreferencesManager(object):
         if search_name not in core.utils.THEME_VARIANTS:
             return None, None
 
-        # Should we skip?
-
         return core.utils.THEME_VARIANTS[search_name], search_name
-
-        for theme_name, variant in core.utils.THEME_VARIANTS.items():
-            if theme_name == search_name:
-                return variant, theme_name
 
     def get_current_scheme_colours(self):
         # Load from Preferences
