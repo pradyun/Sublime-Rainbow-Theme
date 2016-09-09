@@ -42,6 +42,14 @@ class RainbowThemeAdapter(object):
         variant, theme_name = self.prefs.get_theme_variant_and_name()
         if variant is None:
             skip_reason = "Inactive theme"
+        else:
+            # Get the currently active colour for the theme
+            theme_bg = self.prefs.get_active_theme_bg_base()
+            if (
+                scheme_colours["background"].hex == theme_bg and
+                not self.prefs.develop_mode
+            ):
+                skip_reason = "Correct theme is active"
 
         if skip_reason is not None:
             core.logger.debug("[adapter] Skipping generation - " + skip_reason)
@@ -59,6 +67,9 @@ class RainbowThemeAdapter(object):
 
         # Write the generated theme in the Package
         self.th_man.write_theme_parts(context, rendered)
+
+        # Set the currently active colour for the theme
+        self.prefs.set_active_theme_bg_base(scheme_colours["background"].hex)
 
         return True
 

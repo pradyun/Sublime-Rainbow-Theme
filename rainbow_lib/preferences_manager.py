@@ -33,9 +33,18 @@ class PreferencesManager(object):
         self._s_pkg = sublime.load_settings(
             "Theme - Rainbow.sublime-settings"
         )
+        self._s_internal = sublime.load_settings(
+            "Rainbow-internal.sublime-settings"
+        )
         self._s_prefs = sublime.load_settings(
             "Preferences.sublime-settings"
         )
+
+    def get_active_theme_bg_base(self):
+        return self._s_internal.get("current_bg", None)
+
+    def set_active_theme_bg_base(self, value):
+        self._s_internal.set("current_bg", value)
 
     def get_theme_variant_and_name(self):
         theme = self._s_prefs.get("theme", "")
