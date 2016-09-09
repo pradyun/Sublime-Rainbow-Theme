@@ -7,8 +7,6 @@ import sublime
 
 # -----------------------------------------------------------------------------
 
-DEBUG_MODE = False
-DEVELOP_MODE = False
 PACKAGE_NAME = "Theme - Rainbow"
 
 # Path
@@ -21,6 +19,7 @@ _PATHS = {
 
     "cache": ["..", "Cache", PACKAGE_NAME, "fs-cache"],
 }
+
 _NAMES = {
     "theme": "{name}.sublime-theme",
 
