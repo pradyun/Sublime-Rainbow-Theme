@@ -18,10 +18,12 @@ class PreferencesManager(object):
         "caret": "#1F1F1F",
     }
 
-    ext = ".sublime-theme"
+    theme_extension = ".sublime-theme"
 
     def __init__(self):
         super().__init__()
+
+        self.load_settings()
 
     def get_active_theme_details(self):
         settings = sublime.load_settings("Preferences.sublime-settings")
@@ -31,14 +33,19 @@ class PreferencesManager(object):
 
         return theme, colour
 
-    def get_theme_variant_and_name(self):
-        settings = sublime.load_settings("Preferences.sublime-settings")
-        theme = settings.get("theme", "")
+    def load_settings(self):
+        # Load the settings files
+        self._s_prefs = sublime.load_settings(
+            "Preferences.sublime-settings"
+        )
 
-        if not theme.endswith(self.ext):
+    def get_theme_variant_and_name(self):
+        theme = self._s_prefs.get("theme", "")
+
+        if not theme.endswith(self.theme_extension):
             return None, None
 
-        search_name = theme[:-len(self.ext)]
+        search_name = theme[:-len(self.theme_extension)]
         if search_name not in core.utils.THEME_VARIANTS:
             return None, None
 
@@ -59,14 +66,16 @@ class PreferencesManager(object):
 
         # Read the File and locate general settings
         try:
-            text = sublime.load_binary_resource(colour_scheme)
-            plist_obj = plistlib.readPlistFromBytes(text)
+            byte_stream = sublime.load_binary_resource(colour_scheme)
+            plist_obj = plistlib.readPlistFromBytes(byte_stream)
             general_settings = self._find_general_settings(plist_obj)
         except Exception as e:
             raise Exception("Could not load from colour-scheme") from e
 
         final = self.colour_defaults.copy()
-        final.update({k: v for (k, v) in general_settings.items() if k in final})
+        final.update({
+            k: v for (k, v) in general_settings.items() if k in final
+        })
 
         for key, value in final.items():
             if value.startswith("#"):

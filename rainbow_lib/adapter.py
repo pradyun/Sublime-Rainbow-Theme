@@ -19,6 +19,9 @@ class RainbowThemeAdapter(object):
 
     def run(self):
 
+        # Reload the preferences
+        self.prefs.load_settings()
+
         # To decide if generation can be skipped.
         skip_reason = None
 
