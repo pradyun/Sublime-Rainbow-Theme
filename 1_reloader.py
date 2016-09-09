@@ -100,7 +100,7 @@ for suffix in mods_load_order:
     if mod in reload_mods:
         try:
             reload(sys.modules[mod])
-        except (ImportError):
+        except ImportError:
             print("[RAINBOW] Could not reload: {}".format(mod))
     else:
         print("[RAINBOW] Did not reload: {}".format(mod))

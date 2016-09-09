@@ -20,7 +20,7 @@ class FileSystemInterfacer(object):
         try:
             os.makedirs(folder_path, exist_ok=exist_ok)
         except FileExistsError as e:
-            # Permissions. Bleh.
+            # Some Permissions related thing... Bleh.
             if e.errno != 17:
                 raise
 
