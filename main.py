@@ -16,7 +16,7 @@ class RainbowAdaptThemeCommand(sublime_plugin.ApplicationCommand):
         global rta
 
         try:
-            val = rta.run()
+            val = rta.run('sublime command')
         except Exception:
             msg = "Could not generate Rainbow Theme. Check console."
             sublime.status_message(msg)
@@ -41,6 +41,12 @@ class RainbowClearCacheCommand(sublime_plugin.ApplicationCommand):
             raise
         else:
             sublime.status_message("Cleared Cache.")
+
+
+class RainbowViewThemeAdapter(sublime_plugin.EventListener):
+
+    def on_activated_async(self, view):
+        rta.run('tab change')
 
 
 def plugin_loaded():

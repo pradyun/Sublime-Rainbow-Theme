@@ -18,7 +18,8 @@ class RainbowThemeAdapter(object):
         self.th_man = ThemeManager()
         self.prefs = PreferencesManager()
 
-    def run(self):
+    def run(self, trigger_by="settings change"):
+        core.logger.debug("[adapter] Triggered by: %s", trigger_by)
 
         # Reload the preferences
         self.prefs.load_settings()
