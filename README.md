@@ -1,6 +1,6 @@
 # Theme - Rainbow
 
-Light and Dark Sublime Text UI themes that adapts to your active colour scheme. Based off [Soda].
+Light and Dark Sublime Text UI themes that adapts to your active colour scheme. Based on [Soda Theme] by Ian Hill.
 
 > PR with better screencast more than welcome!
 
@@ -46,4 +46,4 @@ This package uses the same algorithms to determine the base-colours for the UI e
 - ST does not acknowledge changes to Widget Schemes on the fly.
     - If support for modification and re-loading of Widget Schemes on the fly is added, it'll be awesome! That'll make this package a tiny bit simpler but more importantly, it'll make ST's behaviour more consistent.
 
-  [Soda]: https://github.com/buymeasoda/soda-theme
+  [Soda Theme]: http://buymeasoda.com/
