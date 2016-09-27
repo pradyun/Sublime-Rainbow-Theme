@@ -17,11 +17,9 @@
 
 -----
 
-<center>
-
-[Installation] ▪ [Activation] ▪ [Settings] ▪ [Contributing] ▪ [License]
-
-</center>
+<p align="center">
+    <a href="#installation">Installation</a> ▪ <a href="#activation">Activation</a> ▪ <a href="#settings">Settings</a> ▪ <a href="#contributing">Contributing</a> ▪ <a href="#license">License</a>
+</p>
 
 -----
 
@@ -95,11 +93,5 @@ Theme - Rainbow is based on [Soda Theme] by Ian Hill. Like Soda Theme, it is lic
   [Creative Commons Attribution-ShareAlike 3.0 License]: https://creativecommons.org/licenses/by-sa/3.0/
   [Soda Theme]: http://buymeasoda.com/
 
-  [Getting Started]: #getting-started
-  [Installation]: #installation
-  [Activation]: #activation
-  [Settings]: #settings
-  [Contributing]: #contributing
-  [License]: #license
   [.zip from Github]: https://github.com/pradyunsg/Sublime-Rainbow-Theme/releases
   [issues]: https://github.com/pradyunsg/Sublime-Rainbow-Theme/issues
