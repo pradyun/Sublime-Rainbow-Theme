@@ -9,7 +9,7 @@ from . import core
 
 
 class PreferencesManager(object):
-    """Loads Preference and Colour Scheme details.
+    """Loads Preferences and Colour Scheme details.
     """
 
     colour_defaults = {

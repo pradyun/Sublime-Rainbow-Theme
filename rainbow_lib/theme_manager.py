@@ -8,6 +8,8 @@ from .compiler import Compiler
 
 
 class ThemeManager(object):
+    """Runs the rendering pipeline with appropriate functions
+    """
 
     def __init__(self, cache=None):
         super().__init__()
