@@ -12,10 +12,10 @@ Light and Dark Sublime Text UI themes that adapts to your active colour scheme. 
 Install the themes using Sublime Package Control, it's listed as `Theme - Rainbow`. You're ready for activating the package!
 
 ### Manually
-Clone the package in Sublime's Packages directory:
+Clone the package in Sublime's Packages directory, in the "Theme - Rainbow" directory:
 
 ```
-git clone https://github.com/pradyunsg/Sublime-Rainbow-Theme
+git clone https://github.com/pradyunsg/Sublime-Rainbow-Theme "Theme - Rainbow"
 ```
 
 After cloning, open Sublime Text and in the Command Palette run `Package Control: Satisfy Dependencies`. This second step is necessary since this package has a dependency on jinja2,  which is provided as a dependency by Package Control. Restart Sublime Text and you're ready for activating the package!
