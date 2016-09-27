@@ -8,7 +8,7 @@ Light and Dark Sublime Text UI themes that adapts to your active colour scheme. 
 
 ## WOW! How do I get this?
 
-### Via Package Control (not active yet)
+### Via Package Control (recommended)
 Install the themes using Sublime Package Control, it's listed as `Theme - Rainbow`. You're ready for activating the package!
 
 ### Manually
