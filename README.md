@@ -1,30 +1,70 @@
-# Theme - Rainbow
+<h1 align="center">
+    Rainbow Theme
+</h1>
 
-Light and Dark Sublime Text UI themes that adapts to your active colour scheme. Based on [Soda Theme] by Ian Hill.
+<p align="center">
+    <img src="https://img.shields.io/packagecontrol/dt/Theme%20-%20Rainbow.svg?style=flat-square" alt="Downloads">
+    <img src="https://img.shields.io/github/release/pradyunsg/Sublime-Rainbow-Theme.svg?style=flat-square" alt="Release">
+</p>
 
-> PR with better screencast more than welcome!
+<p align="center">
+    Sublime Text UI themes that adapt to your active colour scheme.
+</p>
 
 ![Screencast](./screencast.gif)
 
-## WOW! How do I get this?
+> PR with better screencast more than welcome!
 
-### Via Package Control (recommended)
-Install the themes using Sublime Package Control, it's listed as `Theme - Rainbow`. You're ready for activating the package!
+-----
 
-### Manually
-Clone the package in Sublime's Packages directory, in the "Theme - Rainbow" directory:
+<center>
 
-```
-git clone https://github.com/pradyunsg/Sublime-Rainbow-Theme "Theme - Rainbow"
-```
+[Installation] ▪ [Activation] ▪ [Settings] ▪ [Contributing] ▪ [License]
 
-After cloning, open Sublime Text and in the Command Palette run `Package Control: Satisfy Dependencies`. This second step is necessary since this package has a dependency on jinja2,  which is provided as a dependency by Package Control. Restart Sublime Text and you're ready for activating the package!
+</center>
 
-## Activate the theme
-This theme is activated as simply as any other theme. Open your Preferences file (via menu: Preferences -> Settings - User) and add/modify the `theme` key to one of the following variants of the theme:
+-----
+
+## Installation
+
+##### Package Control (recommended)
+
+This is the easiest method of installation.
+
+1. Open Command Palette using menu item `Tools → Command Palette...`
+1. Choose `Package Control: Install Package`
+1. Find and select `Theme - Rainbow`
+1. Restart Sublime Text
+1. Repeat Step 1
+1. Choose `Package Control: Satisfy Dependencies`
+1. Restart Sublime Text
+
+##### Manually
+
+1. Download the [.zip from Github].
+1. Unzip the contents and rename the folder to `Theme - Rainbow`.
+1. Copy the folder into Packages directory, which you can find using the menu item `Preferences → Browse Packages...`
+1. Restart Sublime Text
+1. Manually install all dependencies listed in the `dependencies.json` in the `Theme - Rainbow` folder.
+1. Restart Sublime Text
+
+##### Git (bleeding edge)
+
+1. Clone the Repository into `Theme - Rainbow` of Packages directory.
+   ```
+   git clone https://github.com/pradyunsg/Sublime-Rainbow-Theme "Theme - Rainbow"
+   ```
+1. Restart Sublime Text
+1. Manually install all dependencies listed in the `dependencies.json` in the `Theme - Rainbow` folder.
+1. Restart Sublime Text
+
+## Activation
+This theme is activated as simply as any other theme. Open your User Preferences file, which can be located in the menu: `Preferences → Settings - User` or `Preferences → Settings` and add/modify the `theme` key to one of the following variants of the theme:
 
  - `Rainbow Soda Light.sublime-theme`
  - `Rainbow Soda Dark.sublime-theme`
+
+> I plan on adding flat variants soon. Stay tuned!
 
 Example:
 
@@ -34,20 +74,32 @@ Example:
 }
 ```
 
-> I plan on adding flat variants of the same after fixing some quirks in the current theme generation code.
+## Settings
 
-## How does it work?
-The themes are re-generated on the fly when you change the colour scheme. These changes are picked up by Sublime Text and become visible.
+There is really just one settings useful to the end-user, you, today. I hope that over time this changes.
 
-This package uses the same algorithms to determine the base-colours for the UI elements as `one-light-ui` and `one-dark-ui` from Atom, ported to pure-Python. These base-colours are used when generating the themes.
+```js
+"load_colors_from_active_view": true
+```
 
-### Issues faced while trying make this?
+If true, the theme will be adapted from the currently active view's colour scheme instead of the globally set scheme. There may be a short lag in the change of theme when switching between tabs with different colour schemes.
 
-- ST does not acknowledge changes to Widget Schemes on the fly.
-    - If support for modification and re-loading of Widget Schemes on the fly is added, it'll be awesome! That'll make this package a tiny bit simpler but more importantly, it'll make ST's behaviour more consistent.
+## Contributing
+If you like the theme, help spread the word! I spent a fair amount of my free time fiddling with and tweaking this. It'll be nice to see other people using this.
 
+If you spot some problem or face any sort of difficulty regarding this package, check out the [issues] if someone else is facing a similar issue. Otherwise, feel free to create a new issue!
 
-### License
-Theme - Rainbow is licensed under the [Creative Commons Attribution-ShareAlike 3.0 License].
+## License
+Theme - Rainbow is based on [Soda Theme] by Ian Hill. Like Soda Theme, it is licensed under the [Creative Commons Attribution-ShareAlike 3.0 License].
+
   [Creative Commons Attribution-ShareAlike 3.0 License]: https://creativecommons.org/licenses/by-sa/3.0/
   [Soda Theme]: http://buymeasoda.com/
+
+  [Getting Started]: #getting-started
+  [Installation]: #installation
+  [Activation]: #activation
+  [Settings]: #settings
+  [Contributing]: #contributing
+  [License]: #license
+  [.zip from Github]: https://github.com/pradyunsg/Sublime-Rainbow-Theme/releases
+  [issues]: https://github.com/pradyunsg/Sublime-Rainbow-Theme/issues
